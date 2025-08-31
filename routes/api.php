@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,6 @@ Route::prefix('students')->group(function () {
     Route::put('/{id}', [StudentController::class, 'update']); // Update student
     Route::delete('/{id}', [StudentController::class, 'destroy']); // Delete student
 });
+
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);
